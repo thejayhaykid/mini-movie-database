@@ -1,0 +1,6 @@
+{
+    "movie-url": "https://api.themoviedb.org/3/movie/",
+    "tv-url": "https://api.themoviedb.org/3/tv/",
+    "image-url": "https://image.tmdb.org/t/p/original/",
+    "config-url": "https://api.themoviedb.org/3/configuration/"
+}
