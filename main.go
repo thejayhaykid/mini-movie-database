@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-// Configuration struct (will be updated as app is built)
+// Config Configuration struct (will be updated as app is built)
 type Config struct {
 	APIKey   string `json:"api-key"`
 	Database struct {
@@ -20,7 +20,7 @@ type Config struct {
 	Port string `json:"port"`
 }
 
-// Base URLs for TMDb.org
+// URLs Base URLs for TMDb.org
 type URLs struct {
 	MovieURL  string `json:"movie-url"`
 	TVURL     string `json:"tv-url"`
@@ -28,7 +28,7 @@ type URLs struct {
 	ConfigURL string `json:"config-url"`
 }
 
-// Loads configuration file (e.g. keys.json)
+// LoadConfiguration Loads configuration file (e.g. keys.json)
 func LoadConfiguration(file string) (Config, error) {
 	var config Config
 	configFile, err := os.Open(file)
@@ -41,6 +41,7 @@ func LoadConfiguration(file string) (Config, error) {
 	return config, err
 }
 
+// LoadURLs Loads URLs from the URLs.json file
 func LoadURLs(file string) (URLs, error) {
 	var retVal URLs
 	urlFile, err := os.Open(file)
