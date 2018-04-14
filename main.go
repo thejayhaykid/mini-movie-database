@@ -54,6 +54,15 @@ func LoadURLs(file string) (URLs, error) {
 	return retVal, err
 }
 
+func DumpLoad(file string) {
+	movies, err := LoadFile(file)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	
+}
+
 func main() {
 
 	config, _ := LoadConfiguration("keys.json")
@@ -63,6 +72,8 @@ func main() {
 	url := addr.ConfigURL + "?api_key=" + config.APIKey
 
 	payload := strings.NewReader("{}")
+
+	DumpLoad("movie_ids_04_28_2017.json")
 
 	req, _ := http.NewRequest("GET", url, payload)
 
