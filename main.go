@@ -28,6 +28,9 @@ type URLs struct {
 	ConfigURL string `json:"config-url"`
 }
 
+type MovieDB struct {
+}
+
 // LoadConfiguration Loads configuration file (e.g. keys.json)
 func LoadConfiguration(file string) (Config, error) {
 	var config Config
@@ -60,7 +63,7 @@ func DumpLoad(file string) {
 		fmt.Println(err)
 		return
 	}
-	
+
 }
 
 func main() {
