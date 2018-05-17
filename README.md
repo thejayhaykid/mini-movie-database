@@ -4,7 +4,7 @@ Read [this article](https://towardsdatascience.com/step-by-step-guide-to-build-y
 
 You will need to [create an account at themoviedb.org](https://www.themoviedb.org/account/signup) and [get an API key](https://developers.themoviedb.org/3/getting-started/introduction). The take that key and create a `keys.json` file with the following:
 
-```
+```json
 {
     "api-key": "YOUR API KEY HERE",
     "database": {
