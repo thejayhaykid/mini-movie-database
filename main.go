@@ -7,18 +7,9 @@ import (
 	"net/http"
 	"os"
 	"strings"
-)
 
-// Config Configuration struct (will be updated as app is built)
-type Config struct {
-	APIKey   string `json:"api-key"`
-	Database struct {
-		Host     string `json:"host"`
-		Password string `json:"password"`
-	} `json:"database"`
-	Host string `json:"host"`
-	Port string `json:"port"`
-}
+	. "mini-movie-database/config"
+)
 
 // URLs Base URLs for TMDb.org
 type URLs struct {
@@ -26,22 +17,6 @@ type URLs struct {
 	TVURL     string `json:"tv-url"`
 	ImageURL  string `json:"image-url"`
 	ConfigURL string `json:"config-url"`
-}
-
-type MovieDB struct {
-}
-
-// LoadConfiguration Loads configuration file (e.g. keys.json)
-func LoadConfiguration(file string) (Config, error) {
-	var config Config
-	configFile, err := os.Open(file)
-	defer configFile.Close()
-	if err != nil {
-		return config, err
-	}
-	jsonParser := json.NewDecoder(configFile)
-	jsonParser.Decode(&config)
-	return config, err
 }
 
 // LoadURLs Loads URLs from the URLs.json file

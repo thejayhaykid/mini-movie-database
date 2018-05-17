@@ -1,21 +1,30 @@
 package config
 
 import (
+	"encoding/json"
 	"log"
-
-	"github.com/BurntSushi/toml"
+	"os"
 )
 
-// Loading information from the keys.json file
+// Config Configuration struct (will be updated as app is built)
 type Config struct {
-	TMDBKey  string
-	Server   string
-	Database string
+	APIKey   string `json:"api-key"`
+	Database struct {
+		Server   string `json:"server"`
+		Db       string `json:"database"`
+		Password string `json:"password"`
+	} `json:"database"`
+	Host string `json:"host"`
+	Port string `json:"port"`
 }
 
 // Read and parse keys.json
 func (c *Config) Read() {
-	if _, err := toml.DecodeFile("keys.json", &c); err != nil {
+	configFile, err := os.Open("keys.json")
+	defer configFile.Close()
+	if err != nil {
 		log.Fatal(err)
 	}
+	jsonParser := json.NewDecoder(configFile)
+	jsonParser.Decode(&c)
 }
