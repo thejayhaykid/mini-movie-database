@@ -6,7 +6,11 @@ You will need to [create an account at themoviedb.org](https://www.themoviedb.or
 
 ```
 {
-    "api-key": "YOUR API KEY HERE"
+    "api-key": "YOUR API KEY HERE",
+    "database": {
+        "server": "localhost",
+        "database": "movies_db"
+    }
 }
 ```
 
