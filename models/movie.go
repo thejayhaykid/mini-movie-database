@@ -1,8 +1,10 @@
 package models
 
-import "gopkg.in/mgo.v2/bson"
+import (
+	"gopkg.in/mgo.v2/bson"
+)
 
-// Represents a movie with all of the relevant information from tmdb.com that I need
+// Movie Represents a movie with all of the relevant information from tmdb.com that I need
 type Movie struct {
 	ID          bson.ObjectId `bson:"_id" json:"id"`
 	Name        string        `bson:"name" json:"name"`
