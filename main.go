@@ -43,7 +43,7 @@ func DumpLoad(file string) {
 
 func main() {
 
-	config, _ := LoadConfiguration("keys.json")
+	config := Config
 
 	addr, _ := LoadURLs("URLs.json")
 
