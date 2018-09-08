@@ -20,3 +20,5 @@ You will need to [create an account at themoviedb.org](https://www.themoviedb.or
 ```
 
 *Note: There is already an [awesome Go wrapper for themoviedb.org](https://github.com/ryanbradynd05/go-tmdb/) that I have not used. This project is more for me learning how to do it than anything else so I did not use that.*
+
+*Updated Note: I am changing up to use the [awesome Go wrapper for themoviedb.org](https://github.com/ryanbradynd05/go-tmdb/) due to time constraints and wanted to get this project going.*
