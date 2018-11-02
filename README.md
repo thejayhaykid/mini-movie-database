@@ -20,6 +20,6 @@ You will need to [create an account at themoviedb.org](https://www.themoviedb.or
         "password": "YOURPASSWORDHERE",
         "port": "8080"
     },
-    "host": "localhost"    
+    "host": "localhost"
 }
 ```
